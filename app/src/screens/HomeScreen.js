@@ -1,30 +1,56 @@
-import { View, Text,StyleSheet } from 'react-native'
+import { View, Text,StyleSheet, FlatList } from 'react-native'
 import React from 'react'
 import Card from '../components/Card'
 import ListingDeatilsScreen from './ListingDeatilsScreen'
+import Screen from '../components/Screen'
+import colors from '../../config/colors'
+import AppTextInput from '../components/AppTextInput'
+
+const listing = [
+  {
+    id:1,
+    title: "White T-Shirt for sale",
+    price:100,
+    image : require('../../assets/white-T.jpg')
+  },
+  {
+    id:2,
+    title: "Frock for sale",
+    price:100,
+    image : require('../../assets/blue-top.jpg')
+  },
+  {
+    id:2,
+    title: "Red Jacket for sale",
+    price:100,
+    image : require('../../assets/red-jacket.jpg')
+  }
+
+]
 
 export default function HomeScreen() {
   return (
-    <View style={{backgroundColor:"#F9F6F7",  padding: 10,
-    paddingTop: 100}}>
-{/*       
-      <Card
-        title="Frock for sale"
-        subTitle = "$100"
-        image = {require("../../assets/dev-asangbam-CAo-CL-6a3M-unsplash.jpg")}
-      />
-       */}
 
-       <ListingDeatilsScreen/>
+    <Screen style={styles.screen}>
 
+      <AppTextInput icon="email" placeholder="User Name"/>
 
-    </View>
+      <FlatList data={listing}
+      keyExtractor={listItem => listItem.id.toString()}
+      renderItem={({item}) => 
+        <Card 
+        title={item.title}
+                 subTitle ={"$" + item.price}
+                 image = {item.image}
+                 />
+      }/>
+    </Screen>
   )
 }
 
 const styles = StyleSheet.create({
-    container:{
-        backgroundColor: '#CDCDCD',
+    screen:{
+        backgroundColor: colors.lightGray,
         padding: 10,
         paddingTop: 100,
     

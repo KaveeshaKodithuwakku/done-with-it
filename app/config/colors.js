@@ -4,5 +4,7 @@ export default{
     black:'#000000',
     pink:'#AA336A',
     white:'#FFFFFF',
-    mediumBlack:'#353535',
+    mediumBlack:'#6e6969',
+    lightGray:'#f8f4f4',
+    orange:'#D15122',
 }

@@ -7,14 +7,26 @@ import {MaterialCommunityIcons} from '@expo/vector-icons'
 import AppButton from './app/src/components/AppButton';
 import ViewImageScreen from './app/src/screens/ViewImageScreen';
 import ListingDeatilsScreen from './app/src/screens/ListingDeatilsScreen';
+import MessageScreen from './app/src/screens/MessageScreen';
+import Screen from './app/src/components/Screen';
+import Icon from './app/src/components/Icon';
+import AccountScreen from './app/src/screens/AccountScreen';
 
 export default function App() {
 
   return (
+
+    <AccountScreen/>
+  //  <MessageScreen/>
   //  <WelcomeScreen/>
+// {/* <Screen>
+//   <Icon name="email" size={50} backgroundColor='red' iconColor=''/>
+// </Screen> */}
 
   // <HomeScreen/>
-  <ListingDeatilsScreen/>
+
+
+  // <ListingDeatilsScreen/>
   // <ViewImageScreen/>
 
   // <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>

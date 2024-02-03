@@ -15,7 +15,7 @@ function ListingDeatilsScreen(props) {
         </View>
 
         <View style={styles.userContainer}>
-        <ListItem image={require('../../assets/logo.png')} title = "White T-Shirt" subTitle="5 Listings"/>
+        <ListItem image={require('../../assets/avatar7.png')} title = "White T-Shirt" subTitle="5 Listings"/>
         </View>
 
        
