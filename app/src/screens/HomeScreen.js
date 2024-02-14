@@ -1,10 +1,9 @@
 import { View, Text,StyleSheet, FlatList } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Card from '../components/Card'
-import ListingDeatilsScreen from './ListingDeatilsScreen'
 import Screen from '../components/Screen'
 import colors from '../../config/colors'
-import AppTextInput from '../components/AppTextInput'
+import AppPicker from '../components/AppPicker'
 
 const listing = [
   {
@@ -20,7 +19,7 @@ const listing = [
     image : require('../../assets/blue-top.jpg')
   },
   {
-    id:2,
+    id:3,
     title: "Red Jacket for sale",
     price:100,
     image : require('../../assets/red-jacket.jpg')
@@ -28,12 +27,49 @@ const listing = [
 
 ]
 
+
+const categoryList = [
+  {
+    id:1,
+    categoryName: 'Furniture',
+    value: 1,
+    image: require('../../assets/sofa.png')
+  },
+  {
+    id:2,
+    categoryName: 'Clothing',
+    value: 2,
+    image: require('../../assets/clothing.png')
+  },
+  {
+    id:3,
+    categoryName: 'Foods',
+    value: 3,
+    image: require('../../assets/food.png')
+  },
+  {
+    id:4,
+    categoryName: 'Electric Items',
+    value: 4,
+    image: require('../../assets/electronics.png')
+  }
+  ]
+
+
 export default function HomeScreen() {
+
+  const [category, setCategory] = useState(categoryList[0]);
+
   return (
 
     <Screen style={styles.screen}>
 
-      <AppTextInput icon="email" placeholder="User Name"/>
+<AppPicker
+        icon="apps"
+        items={categoryList}
+        selectedItem = {category}
+        onSelectedItem ={item => setCategory(item)}
+        placeholder="Category"/>
 
       <FlatList data={listing}
       keyExtractor={listItem => listItem.id.toString()}
@@ -42,6 +78,8 @@ export default function HomeScreen() {
         title={item.title}
                  subTitle ={"$" + item.price}
                  image = {item.image}
+                 imgWidth={"100%"}
+                 imgHeight = {200}
                  />
       }/>
     </Screen>
@@ -52,7 +90,7 @@ const styles = StyleSheet.create({
     screen:{
         backgroundColor: colors.lightGray,
         padding: 10,
-        paddingTop: 100,
+        paddingTop: 30,
     
     }
 })

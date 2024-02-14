@@ -3,11 +3,11 @@ import { Image,View, StyleSheet } from 'react-native';
 import AppText from './AppText';
 import colors from '../../config/colors';
 
-function Card({title, subTitle, image}) {
+function Card({title, subTitle, image, imgWidth, imgHeight}) {
     return (
        <View style={styles.card}>
 
-        <Image style={styles.image} source={image}/>
+        <Image style={{width:imgWidth, height:imgHeight}} source={image}/>
 
         <View style={styles.detailsContainer}>
             <AppText style={styles.title}>{title} </AppText>
@@ -25,12 +25,17 @@ const styles = StyleSheet.create({
         backgroundColor: colors.white,
         borderRadius: 15,
         marginBottom: 20,
-        overflow:'hidden'
+        overflow:'hidden',
+        shadowColor:'gray',
+        shadowOffset:{width:20, height:20},
+        shadowOpacity:1,
+        shadowRadius:0,
+        elevation:20,
+        marginHorizontal:10
+      
+
     },
-    image:{
-        width:'100%',
-        height:200
-    },
+    
     detailsContainer:{
         padding: 20,
     },

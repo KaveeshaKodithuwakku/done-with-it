@@ -3,7 +3,7 @@ import { Text,StyleSheet, Platform,View } from 'react-native'
 import AppButton from './AppButton';
 import colors from '../../config/colors';
 
-function AppText({children, style}) {
+function AppText({style, children}) {
     // function AppText(props) {
     return (
         // <Text>props.children</Text>
@@ -17,6 +17,7 @@ function AppText({children, style}) {
 const styles = StyleSheet.create({
     text:{
         color:colors.pink,
+    
         ...Platform.select({
             ios:{
                 fontSize:10,

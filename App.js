@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import WelcomeScreen from './app/src/screens/WelcomeScreen';
 import HomeScreen from './app/src/screens/HomeScreen'
 import AppText from './app/src/components/AppText';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
@@ -16,14 +15,13 @@ export default function App() {
 
   return (
 
-    <AccountScreen/>
+    // <AccountScreen/>
   //  <MessageScreen/>
-  //  <WelcomeScreen/>
 // {/* <Screen>
 //   <Icon name="email" size={50} backgroundColor='red' iconColor=''/>
 // </Screen> */}
 
-  // <HomeScreen/>
+  <HomeScreen/>
 
 
   // <ListingDeatilsScreen/>

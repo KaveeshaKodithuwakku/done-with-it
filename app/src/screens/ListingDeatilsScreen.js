@@ -7,7 +7,7 @@ import AppText from '../components/AppText';
 function ListingDeatilsScreen(props) {
     return (
       <View>
-        <Image style={styles.image} source={require('../../assets/dev-asangbam-CAo-CL-6a3M-unsplash.jpg')}/>
+        <Image style={styles.image} source={require('../../assets/white-T.jpg')}/>
 
         <View style={styles.detailContainer}>
         <AppText style={styles.title}>White T-Shirt for sale</AppText>
